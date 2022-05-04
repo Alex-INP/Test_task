@@ -1,5 +1,8 @@
 import json
 import requests
+import sys
+
+sys.path.append("..")
 
 from flask import Flask, request
 from sqlalchemy.exc import IntegrityError
@@ -22,7 +25,6 @@ def index():
 					break
 				except IntegrityError:
 					DB.session.rollback()
-					pass
 
 	return create_response_data(DB.get_last_record())
 
@@ -44,5 +46,5 @@ def create_response_data(db_object):
 	})
 
 
-app.run()
+app.run(host="0.0.0.0", port=5000)
 

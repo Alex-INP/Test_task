@@ -7,7 +7,7 @@ from sqlalchemy_utils import database_exists, create_database
 class DatabaseOperator:
 	settings = {
 		"drivername": "postgresql+psycopg2",
-		"host": "localhost",
+		"host": "postgres_database",
 		"port": "5432",
 		"username": "postgres",
 		"password": "admin",
