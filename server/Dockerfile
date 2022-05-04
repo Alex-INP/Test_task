@@ -1,4 +1,4 @@
-FROM python:3.6.8
+FROM python:3.8.13
 
 RUN pip3 install --upgrade pip
 COPY ./ ./

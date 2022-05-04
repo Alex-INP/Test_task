@@ -1,4 +1,4 @@
-version: "3.i"
+version: "3.1"
 
 services:
   database:
@@ -14,10 +14,10 @@ services:
       - db_vol:/var/lib/postgresql/data
   application:
     container_name: web_application
-    build: ./Test_task
+    build: ./server
     ports:
       - 5000:5000
-    command: bash -c "python ./server/application/main.py"
+    command: bash -c "python ./application/main.py"
     depends_on:
       - database
 volumes:
